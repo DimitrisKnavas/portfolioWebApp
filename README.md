@@ -1,6 +1,6 @@
 # dkarnApp
 
-Here will be some information about the app.
+Here will be some information about this portfolio web app.
 
 ## How to start?
 
