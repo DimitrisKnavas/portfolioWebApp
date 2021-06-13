@@ -1,0 +1,15 @@
+.purple-gradient{
+    background:linear-gradient(to right, #0c1854 0, #4f0c80 51%,#0e184e 100%);
+}
+
+nav.navbar .navbar-brand{
+    color:#ffaf43;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link{
+    padding-left:1.5rem;
+    padding-right:1.5rem;
+    font-size:1.35rem;
+}
