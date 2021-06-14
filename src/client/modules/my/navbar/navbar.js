@@ -6,18 +6,21 @@ export default class Navbar extends LightningElement{
 
     isMobileToggle = false;
 
+    isActive = NAV_DATA[0];
+
     connectedCallback() {
         //on window resize, fix highlight position
         window.addEventListener('resize', () => {
             
                 let selectedOption = document.querySelector('ul ~ div');
-                let firstOption = document.querySelector('ul > li > a');
+                //let firstOption = document.querySelector('ul > li > a');
+                let firstOption = document.querySelector('a[active]');
                 console.log(firstOption);
 
                 let width = firstOption.getBoundingClientRect().width;
                 let left = firstOption.getBoundingClientRect().left;
 
-                let changedStyle = `width: ${width}px; left: ${left}px; display:block; overflow:hidden;`;
+                let changedStyle = `width: ${width}px; left: ${left}px; display:block; overflow:hidden; transition:none`;
 
                 selectedOption.setAttribute('style',changedStyle);
             
@@ -76,16 +79,27 @@ export default class Navbar extends LightningElement{
     
     defaultHighlightOption(){
         let selectedOption = document.querySelector('ul ~ div');
-        let firstOption = document.querySelector('ul > li > a');
-        console.log(firstOption);
-
+        //let firstOption = document.querySelector('ul > li > a');
+        let firstOption = document.querySelector('a[active]');
         let width = firstOption.getBoundingClientRect().width;
         let left = firstOption.getBoundingClientRect().left;
-        console.log(left);
 
         let changedStyle = `width: ${width}px; left: ${left}px; display:block; overflow:hidden;`;
 
         selectedOption.setAttribute('style',changedStyle);
+    }
+
+    setActive(){
+        this.isActive = event.target.innerText;
+        let activeLink = event.target;
+        activeLink.setAttribute('active','true');
+        let options = document.querySelectorAll('ul > li > a');
+
+        options.forEach(option => {
+            if(this.isActive !== option.innerText && option.hasAttribute('active')){
+                option.removeAttribute('active');
+            }
+        })
     }
 
 }
