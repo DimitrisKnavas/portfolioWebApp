@@ -1,5 +1,5 @@
 <template>
-    <nav class={navMoblieDesign}>
+    <nav class={navMobileDesign}>
         <div class="container-fluid">
           <button class="navbar-toggler" onclick={toggleMobileMenu}>
             <span class="navbar-toggler-icon"></span>
@@ -9,10 +9,11 @@
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <template for:each={navList} for:item = "nav">
                     <li class="nav-item" key={nav}>
-                        <a class="nav-link" aria-current="page" href="#">{nav}</a>
+                        <a class="nav-link" aria-current="page" href="#" onmouseover={highlightOption} onmouseout={defaultHighlightOption}>{nav}</a>
                       </li>
                 </template>
             </ul>
+            <div class={navMobileHideUndeline} onresize={defaultHighlightOption}></div>
           </div>
         </div>
       </nav>

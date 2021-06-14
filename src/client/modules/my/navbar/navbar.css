@@ -1,15 +1,46 @@
 .purple-gradient{
-    background:linear-gradient(to right, #0c1854 0, #4f0c80 51%,#0e184e 100%);
+    /*background:linear-gradient(to right, #0c1854 0, #4f0c80 51%,#0e184e 100%);*/
+    background-color: #0062c5;
+    opacity: 0.7;
+}
+
+nav{
+    padding-bottom: 50px !important;
+    padding-top: 50px !important;
 }
 
 nav.navbar .navbar-brand{
     color:#ffaf43;
     font-weight: 600;
     font-size: 2rem;
+    font-family: 'Orbitron', sans-serif;
+    padding-left:100px;
 }
 
 .navbar-expand-lg .navbar-nav .nav-link{
     padding-left:1.5rem;
     padding-right:1.5rem;
     font-size:1.35rem;
+}
+
+.navbar-slider{
+    background-color:#0d10b4;
+    /*background-color:#0062c5;*/
+    position:absolute !important;
+    left:auto;
+    z-index: -1;
+    display:block;
+    width: 100px;
+    height: 170px;
+    overflow:hidden;
+    opacity:1;
+    transition:ease-in 0.25s;
+}
+
+.navbar-slider-hide{
+    display:none !important;
+}
+
+.nav-link{
+    font-family: 'Orbitron', sans-serif;
 }
