@@ -1,0 +1,22 @@
+<template>
+    <div  class="cont-carousel">
+        <template for:each={slidesData} for:item="slide">
+            <div class={slide.cardClasses} key={slide.slideIndex}>
+                <div class = "cont-carousel-img">
+                    <img src={slide.image}/>
+                </div>
+                <div class="text-section">
+                    <h3>{slide.heading}</h3>
+                    <div>{slide.description}</div>
+                </div>
+            </div>
+        </template>
+        <a class="prev" onclick={slideBack}>&#60;</a>
+        <a class="next" onclick={slideForward}>&#62;</a>
+        <div class="navCarousel p-3">
+            <template for:each={slidesData} for:item="slide">
+                <span class={slide.dotClasses} data-id={slide.slideIndex} key={slide.slideIndex} onclick={currentSlide}></span>
+            </template>
+        </div>
+    </div>
+</template>
