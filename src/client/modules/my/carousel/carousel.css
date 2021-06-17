@@ -118,7 +118,7 @@ h3{
         overflow:hidden;
     }
 
-    img{
+    img[alt="carousel"]{
         width:100%;
         height:260px;
     }
