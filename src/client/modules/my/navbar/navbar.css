@@ -1,16 +1,16 @@
 .purple-gradient{
     /*background:linear-gradient(to right, #0c1854 0, #4f0c80 51%,#0e184e 100%);*/
     background-color: #0062c5;
-    opacity: 0.9;
+    opacity: 0.85;
 }
 
-nav{
-    padding-bottom: 50px !important;
-    padding-top: 50px !important;
-}
+/*nav{
+    padding-bottom: 30px !important;
+    padding-top: 30px !important;
+}*/
 
 nav.navbar .navbar-brand{
-    color:#ffaf43;
+    color:#fff;;
     font-weight: 600;
     font-size: 2rem;
     font-family: 'Orbitron', sans-serif;
@@ -44,3 +44,11 @@ nav.navbar .navbar-brand{
 .nav-link{
     font-family: 'Orbitron', sans-serif;
 }
+
+img[alt="Avatar"] {
+    border-radius: 50%;
+    width:100px; 
+    height:auto;
+    left: 200px;
+  }
+

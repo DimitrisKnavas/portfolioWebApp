@@ -16,23 +16,26 @@
     height:100%;
 }
 
-img{
+img[alt="carousel"]{
     width:100%;
-    height:840px;
+    height:740px;
+    /*filter: blur(2px);
+    -webkit-filter: blur(2px);*/
 }
 
 .text-section{
+    color:gainsboro;
     position:absolute;
-    font-size:40px;
+    font-size:35px;
     width:100%;
     top:35%;
-    left: 20%;
+    left: 16%;
     font-family: 'Orbitron', sans-serif;
     font-weight: bold;
 }
 
 h3{
-    font-size:50px;
+    font-size:43px;
 }
 
 .prev, .next{
@@ -84,18 +87,22 @@ h3{
 }
 
 .cont-carousel{
-    position: relative; height:840px; width:100%;
+    position: relative; height:740px; width:100%;
 }
 
 @media only screen and (max-width: 600px) {
     .text-section{
         position:absolute;
-        font-size:20px;
+        font-size:15px;
         width:75%;
         top:35%;
         left: 20%;
         font-family: 'Orbitron', sans-serif;
         font-weight: bold;
+    }
+
+    h3{
+        font-size:20px;
     }
 
     /*.custom-card-visible, .custom-card-hidden{
