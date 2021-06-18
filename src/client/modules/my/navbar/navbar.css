@@ -46,7 +46,7 @@ nav.navbar .navbar-brand{
 }
 
 img[alt="Avatar"] {
-    border-radius: 50%;
+    border-radius: 5%;
     width:100px; 
     height:auto;
     left: 200px;

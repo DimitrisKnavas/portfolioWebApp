@@ -1,0 +1,62 @@
+.banner-text-container{
+    text-align: center;
+    padding: 20px;
+}
+
+.banner-title-small{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color:#747474;
+    font-style: italic;
+}
+
+.banner-title-big{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color:#383838;
+    font-style: bold;
+    font-size: 40px;
+}
+
+.banner-title-medium{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color:#383838;
+    font-style: italic;
+    font-size: 25px;
+}
+
+img[alt="profile"]{
+    border-radius: 50%;
+    width:300px; 
+    height:auto;
+    margin:20px;
+}
+
+.banner-border{
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-color: #e6e6e6;
+    padding-left: 40px;
+    padding-right:40px;
+}
+
+@media only screen and (max-width: 600px) {
+    img[alt="profile"]{
+        border-radius: 50%;
+        width:150px; 
+        height:auto;
+    }
+
+    .banner-title-big{
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        color:#383838;
+        font-style: bold;
+        font-size: 30px;
+    }
+
+    .banner-title-medium{
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        color:#383838;
+        font-style: italic;
+        font-size: 20px;
+    }
+}
+
