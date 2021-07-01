@@ -1,0 +1,25 @@
+<template>
+    <section class="bio-back">
+        <div class="container-fluid pt-5 pb-5 px-md-5">
+            <div class="text-center pt-5 pb-5">
+                <h2 class="bio-title">BIOGRAPHY</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+                <template for:each={bioData} for:item="bio">
+                    <div class="col" key={bio.title}>
+                        <div class="card h-100">
+                            <div class="imgBox">
+                                <img src={bio.image} class="card-img-top" alt={bio.title}>
+                            </div>
+                          <div class="card-body">
+                            <h5 class="card-title">{bio.title}</h5>
+                            <p class="card-text">{bio.description}</p>
+                          </div>
+                        </div>
+                      </div>
+                </template>
+              </div>
+        </div>
+    </section>
+</template>

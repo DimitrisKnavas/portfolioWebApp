@@ -60,3 +60,49 @@ img[alt="profile"]{
     }
 }
 
+.container{
+    margin: auto;
+    text-align: center;
+    padding-top: 6rem;
+}
+
+.title-container{
+        white-space: nowrap;
+        color: #fff;
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        /*-webkit-transform: translate(-50%, 30%);*/
+        transform: translate(-50%, 30%);
+}
+
+.title-big{
+    font-size: 3.5vw;
+    font-weight: bolder;
+    display:block !important;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.wow-effect{
+    min-height: 100vh;
+    top: 0;
+    padding: 0;
+    z-index: 20;
+    overflow: hidden;
+    /*position: -webkit-sticky;*/
+    position: sticky;
+}
+
+.wow-effect.fly .magic{
+    transition-timing-function: ease-in;
+    transition-duration: .4s;
+    transform: scale(4);
+    opacity: 0;
+}
+
+.magic{
+    display: flex;
+    min-height: 100vh;
+    background-color: #000;
+    transition: all .2s ease-in-out;
+}

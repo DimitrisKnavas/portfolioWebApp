@@ -1,0 +1,70 @@
+.bio-title{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color: white;
+}
+
+.bio-back{
+    background-color: #181818;
+}
+
+.underline{
+    height:2px;
+    max-width: 100px;
+    margin:auto;
+    border-radius:6px;
+    background-color:white;
+}
+
+.card-title, .card-text{
+    text-align: end;
+}
+
+.imgBox{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color: #0062c5;
+    z-index:1;
+    display:flex;
+    align-items: center;
+    overflow:hidden;
+    transition:0.5s ease-in-out;
+    padding-left: 40%;
+}
+
+.card:hover .imgBox{
+    width:150px;
+    height:150px;
+    left:-75px;
+    top: calc(50% - 75px);
+    transition: 0.5s ease-in-out;
+    background: #ff0057;
+    padding-left:unset;
+}
+
+.card{
+    margin:15px 35px;
+    /*background-color: #333;*/
+    background-color: white;
+}
+
+.card .imgBox:before{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:100%;
+    text-align: center;
+    font-size:6em;
+}
+
+.card .imgBox img{
+    max-width:100px;
+    transition: 0.5s ease-in-out;
+}
+
+.card .imgBox:hover img{
+    max-width:75px;
+}

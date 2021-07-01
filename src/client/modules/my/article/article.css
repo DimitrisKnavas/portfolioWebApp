@@ -1,0 +1,19 @@
+.wrap{
+    display: block;
+    width: 100%;
+    float: left;
+    color:white;
+    margin-bottom: 5%;
+}
+
+.wrap-right{
+    float: right;
+    display: inline-block;
+    max-width: 560px;
+}
+
+.wrap-left{
+    display: inline-block;
+    max-width: 560px;
+    float: left;
+}

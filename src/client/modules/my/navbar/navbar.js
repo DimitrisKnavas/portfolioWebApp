@@ -89,8 +89,34 @@ export default class Navbar extends LightningElement{
         selectedOption.setAttribute('style',changedStyle);
     }
 
-    setActive(){
+    setActive(event){
+        event.preventDefault();
+        if(this.isMobileToggle){
+            this.toggleMobileMenu();
+        }
         this.isActive = event.target.innerText;
+        let sectionNew = ''; 
+        console.log(this.isActive);
+        console.log(event.target.innerText);
+        if(this.isActive === 'HOME'){
+            let bannerEffect = document.querySelector('.wow-effect');
+            bannerEffect.classList.remove('fly');
+            sectionNew = document.getElementById('homeSection-0');
+            console.log(sectionNew);
+        }
+        else if(this.isActive === 'BIO'){
+            let bannerEffect = document.querySelector('.wow-effect');
+            bannerEffect.classList.add('fly');
+            sectionNew = document.getElementById('bioSection-0');
+            console.log(sectionNew);
+        }
+        else if(this.isActive === 'EXPERIENCE'){
+            let bannerEffect = document.querySelector('.wow-effect');
+            bannerEffect.classList.add('fly');
+            sectionNew = document.querySelector('my-timeline');
+            console.log(sectionNew);
+        }
+        sectionNew.scrollIntoView();
         let activeLink = event.target;
         activeLink.setAttribute('active','true');
         let options = document.querySelectorAll('ul > li > a');

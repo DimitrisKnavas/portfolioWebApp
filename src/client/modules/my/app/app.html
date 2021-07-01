@@ -23,7 +23,18 @@
             <a href="https://lwc.dev" class="link" target="_blank">Learn LWC</a>
         </div>
     </div>-->
-
-    <my-navbar class="mobile-navbar" style="z-index: 21; position:absolute; width:100%;"></my-navbar>
-    <my-banner class="mobile-banner" style="position:relative; z-index:0; min-width:600;" ></my-banner>
+    
+    <my-navbar class="mobile-navbar" style="z-index: 21; position:fixed; width:100%;"></my-navbar>
+    <div id="homeSection"></div>
+    <my-banner></my-banner>
+    <section id="bioSection"  class="content body-dark pd-0">
+        <div class="container">
+            <template for:each = {bioData} for:item="bio">
+                <my-article key={bio.index} bio-index={bio.index} bio-title={bio.title} bio-body={bio.body}></my-article>
+            </template>
+        </div>
+    </section>
+    <my-timeline></my-timeline>
+    <!--<my-banner class="mobile-banner" style="position:relative; z-index:0; min-width:600;" ></my-banner>
+    <my-bio style="position:relative; z-index:0; width:100%;" ></my-bio>-->
 </template>
