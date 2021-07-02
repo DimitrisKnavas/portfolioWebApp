@@ -17,6 +17,19 @@
                 background-color: #000;
             }
 
+            html {
+                overflow: scroll;
+                overflow-x: hidden;
+            }
+            ::-webkit-scrollbar {
+                width: 0;  /* Remove scrollbar space */
+                background: transparent;  /* Optional: just make scrollbar invisible */
+            }
+            /* Optional: show position indicator in red */
+            ::-webkit-scrollbar-thumb {
+                background: #FF0000;
+            }
+
             /*@media only screen and (min-width: 600px) {
                 body{
                     min-width:600px;
@@ -34,7 +47,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@695&display=swap" rel="stylesheet">
     </head>
-    <body class="body-dark" style="overflow-x: hidden; max-width:1920px; ">
+    <body class="body-dark" style="max-width:1920px; ">
         
         <div id="main"></div>
         
