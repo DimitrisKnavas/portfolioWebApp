@@ -91,6 +91,7 @@ img[alt="profile"]{
     overflow: hidden;
     /*position: -webkit-sticky;*/
     position: sticky;
+    pointer-events: none; 
 }
 
 .wow-effect.fly .magic{

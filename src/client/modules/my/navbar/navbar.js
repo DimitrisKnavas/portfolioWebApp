@@ -116,6 +116,12 @@ export default class Navbar extends LightningElement{
             sectionNew = document.querySelector('my-timeline');
             console.log(sectionNew);
         }
+        else if(this.isActive === 'CONTACT'){
+            let bannerEffect = document.querySelector('.wow-effect');
+            bannerEffect.classList.add('fly');
+            sectionNew = document.querySelector('my-contact');
+            console.log(sectionNew);
+        }
         sectionNew.scrollIntoView();
         let activeLink = event.target;
         activeLink.setAttribute('active','true');

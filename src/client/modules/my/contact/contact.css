@@ -1,0 +1,32 @@
+
+.border-pink{
+    border-color: #ff0057;
+    background-color:transparent;
+    color:white;
+}
+
+input[type=text]:focus, textarea:focus {
+    border-color: #ff0057 !important;
+    background-color:transparent !important;
+    color:white !important;
+    box-shadow:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    outline: none !important;
+}
+
+.rating-label{
+    color:grey;
+    padding-top:10px;
+}
+
+.links-container{
+    display:flex;
+    justify-content:space-evenly;
+}
+
+section{
+    padding-top:250px;
+}
+
+
