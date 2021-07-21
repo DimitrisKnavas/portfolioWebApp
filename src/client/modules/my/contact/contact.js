@@ -50,16 +50,44 @@ export default class Contact extends LightningElement{
         console.log(formData.get('rating'));
         console.log(typeof formData.get('email'));
         console.log(formData.get('message'));
+        let data = {};
+        for (var [key, value] of formData.entries()) { 
+            console.log(key, value);
+            data[key] = value;
+        }
 
-        document.querySelector('input[name=email]').value='';
-        document.querySelector('textarea[name=message]').value='';
-        document.querySelector('input[name=rating]').value='';
-        document.querySelector('input[type=radio]:checked').checked=false;
+        fetch('http://localhost:3002/api/v1/sendemail',{
+            method:'POST',
+            headers:{
+                'accept':'application/json',
+                'Content-Type':'application/json'
+            },
+            body:JSON.stringify(data)
+        }).then(response=>{
+            if(!response.ok){
+                throw new Error('No response from server')
+            }
+            return response.json();
+        }).then(result=>{
+            console.log('Message sent',result)
+            document.querySelector('input[name=email]').value='';
+            document.querySelector('textarea[name=message]').value='';
+            document.querySelector('input[name=rating]').value='';
+            let selectedRating = document.querySelector('input[type=radio]:checked');
+            if(selectedRating){
+                selectedRating.checked=false;
+            }
+            
 
-        document.getElementById('formSuccess-6').style.display="block";
-        document.getElementById('formSuccess-6').style.color="green";
-        setTimeout(()=>{
-            document.getElementById('formSuccess-6').style.display="none";
-        },2000);
+            document.getElementById('formSuccess-6').style.display="block";
+            document.getElementById('formSuccess-6').style.color="green";
+            setTimeout(()=>{
+                document.getElementById('formSuccess-6').style.display="none";
+            },2000);
+        }).catch(error=>{
+            console.error(error)
+        })
+
+        
     }
 }
