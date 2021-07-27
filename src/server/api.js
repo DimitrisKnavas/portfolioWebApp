@@ -5,6 +5,8 @@ const express = require('express');
 const nodemailer = require("nodemailer");
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const https = require('https');
+const fetch = require('node-fetch');
 
 if(process.env.NODE_ENV !== 'production'){
     require('dotenv').config()
@@ -42,9 +44,35 @@ app.get('/api/v1/endpoint', (req, res) => {
     res.json({ success: true });
 });
 
-app.post('/api/v1/sendemail', (req, res) => {
+app.post('/api/v1/sendemail', async (req, res) => {
       console.log(req.body);
+      const secret = process.env.recaptcha_key;
+      
       const {ratingdummy,rating,email,message} = req.body;
+      let token = req.body['g-recaptcha-response'];
+      console.log(token);
+
+      if(token === undefined || token === '' || token === null){
+        return res.json({success:false, "message":"Message not sent. Reason: Please use the Recaptcha functionality."});
+      }
+
+      const response = await fetch(`https://www.google.com/recaptcha/api/siteverify?secret=${secret}&response=${token}`,
+                    {
+                        method:"POST",
+                    }
+            );
+         const data = await response.json();
+        
+        console.log('recaptcha said: ' + data);
+        console.log('success: ' + data.success);
+        console.log('challenge_ts: ' + data['challenge_ts']);
+        console.log('hostname: ' + data.hostname);
+        console.log('error-codes: ' + data['error-codes']);
+
+        if(data.success !== true){
+            return res.json({success:false, "message":`Message not sent. Reason: ${data['error-codes']}.`});
+        }
+
       const mailData = {
         from: email, // sender address
         to: "dimitriskarn94@gmail.com", // list of receivers
@@ -63,7 +91,7 @@ app.post('/api/v1/sendemail', (req, res) => {
         }
         else{
             console.log(info);
-            res.json({sucess:true, "message":"Message sent"})
+            res.json({success:true, "message":"Message sent"})
         }
     })
 });

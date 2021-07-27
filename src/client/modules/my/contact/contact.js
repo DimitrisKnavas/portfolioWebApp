@@ -26,6 +26,7 @@ export default class Contact extends LightningElement{
     handleMessage(event){
         let errorSpan = document.getElementById('emailError-6');
         errorSpan.style.display="none";
+        document.getElementById('formSuccess-6').display="none";
         event.preventDefault();
         let formElement = document.querySelector("form");
         console.log(formElement);
@@ -56,6 +57,8 @@ export default class Contact extends LightningElement{
             data[key] = value;
         }
 
+        document.querySelector('button[type=submit]').disabled = true;
+
         fetch('http://localhost:3002/api/v1/sendemail',{
             method:'POST',
             headers:{
@@ -69,21 +72,34 @@ export default class Contact extends LightningElement{
             }
             return response.json();
         }).then(result=>{
-            console.log('Message sent',result)
-            document.querySelector('input[name=email]').value='';
-            document.querySelector('textarea[name=message]').value='';
-            document.querySelector('input[name=rating]').value='';
-            let selectedRating = document.querySelector('input[type=radio]:checked');
-            if(selectedRating){
-                selectedRating.checked=false;
-            }
-            
+            console.log('Message sent',result);
+            if(result.success === true){
+                document.querySelector('input[name=email]').value='';
+                document.querySelector('textarea[name=message]').value='';
+                document.querySelector('input[name=rating]').value='';
+                let selectedRating = document.querySelector('input[type=radio]:checked');
+                if(selectedRating){
+                    selectedRating.checked=false;
+                }
+                
 
-            document.getElementById('formSuccess-6').style.display="block";
-            document.getElementById('formSuccess-6').style.color="green";
-            setTimeout(()=>{
-                document.getElementById('formSuccess-6').style.display="none";
-            },2000);
+                document.getElementById('formSuccess-6').style.display="block";
+                document.getElementById('formSuccess-6').style.color="green";
+                document.getElementById('formSuccess-6').innerText="Submitted! Thank you for your feedback!";
+                
+                setTimeout(()=>{
+                    document.getElementById('formSuccess-6').style.display="none";
+                },2000);
+            }
+            else{
+                document.getElementById('formSuccess-6').style.display="block";
+                document.getElementById('formSuccess-6').style.color="red";
+                document.getElementById('formSuccess-6').innerText=result.message;
+            }
+
+            document.querySelector('button[type=submit]').disabled = false;
+            
+            
         }).catch(error=>{
             console.error(error)
         })

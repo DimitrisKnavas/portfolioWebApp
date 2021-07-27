@@ -9,7 +9,6 @@
                             <div class="line mb-5" style="color: #ff0057;"></div>
                         </div>
                         <form>
-                            <!--<div class="g-recaptcha" data-sitekey="6LcfBKkbAAAAAEDSf1p72uHPuht_q7QgO-XmtB4x"></div>-->
                             <div class="mb-3 form-control p-3 border-pink" style="display: flex; justify-content:space-between;">
                                 <div class="rating-label">
                                     <p >Rating</p>
@@ -24,7 +23,8 @@
                             <div class="mb-3">
                                 <textarea type="text" class="form-control p-3 border-pink" cols="20" rows="10" placeholder="Message" name="message"></textarea>
                             </div>
-                            <span id="formSuccess" style="display:none;">Submitted! Thank you for your feedback!</span>
+                            <span id="formSuccess" style="display:none;"></span>
+                            <div class="g-recaptcha" data-sitekey="6LcfBKkbAAAAAEDSf1p72uHPuht_q7QgO-XmtB4x"></div>
                             <button type="submit" class="btn btn-lg p-3 text-center mb-3 mt-3 border-pink" onclick={handleMessage}>Submit</button>
                         </form>
                     </div>
