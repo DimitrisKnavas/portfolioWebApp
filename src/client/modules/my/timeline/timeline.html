@@ -2,34 +2,15 @@
     <div class="timeline-container">
         <div class="timeline">
             <ul>
-                <li>
-                    <div class="timeline-content">
-                        <h3>Title</h3>
-                        <p>2021</p>
-                        <p>Description</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="timeline-content">
-                        <h3>Title</h3>
-                        <p>2021</p>
-                        <p>Description</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="timeline-content">
-                        <h3>Title</h3>
-                        <p>2021</p>
-                        <p>Description</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="timeline-content">
-                        <h3>Title</h3>
-                        <p>2021</p>
-                        <p>Description</p>
-                    </div>
-                </li>
+                <template for:each = {timelineData} for:item="tl">
+                    <li  key={timelineData.index}>
+                        <div class="timeline-content">
+                            <h3>{tl.title}</h3>
+                            <p>{tl.date}</p>
+                            <p>{tl.description}</p>
+                        </div>
+                    </li>
+                </template>
             </ul>
         </div>
     </div>

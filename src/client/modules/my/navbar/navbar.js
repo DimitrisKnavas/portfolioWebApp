@@ -49,7 +49,7 @@ export default class Navbar extends LightningElement{
 
     //change background when menu button is clicked(only in mobile); 
     get navMobileDesign(){
-        return `navbar navbar-expand-lg navbar-dark ${this.isMobileToggle ? 'bg-dark' : 'purple-gradient'}`;
+        return `navbar navbar-expand-lg navbar-dark fixed-top ${this.isMobileToggle ? 'bg-dark' : 'purple-gradient'}`;
     }
 
     get navMobileHideUndeline(){

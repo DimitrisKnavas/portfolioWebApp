@@ -5,7 +5,7 @@ export default class Contact extends LightningElement{
 
     renderedCallback(){
         //let ratingComp = document.querySelector('my-fivestarrating');
-        let ratingComp = document.getElementById('ratingComp-6');
+        let ratingComp = document.getElementById('ratingComp-8');
         console.log(ratingComp);
 
         
@@ -24,9 +24,9 @@ export default class Contact extends LightningElement{
     }
     
     handleMessage(event){
-        let errorSpan = document.getElementById('emailError-6');
+        let errorSpan = document.getElementById('emailError-8');
         errorSpan.style.display="none";
-        document.getElementById('formSuccess-6').display="none";
+        document.getElementById('formSuccess-8').display="none";
         event.preventDefault();
         let formElement = document.querySelector("form");
         console.log(formElement);
@@ -83,18 +83,18 @@ export default class Contact extends LightningElement{
                 }
                 
 
-                document.getElementById('formSuccess-6').style.display="block";
-                document.getElementById('formSuccess-6').style.color="green";
-                document.getElementById('formSuccess-6').innerText="Submitted! Thank you for your feedback!";
+                document.getElementById('formSuccess-8').style.display="block";
+                document.getElementById('formSuccess-8').style.color="green";
+                document.getElementById('formSuccess-8').innerText="Submitted! Thank you for your feedback!";
                 
                 setTimeout(()=>{
-                    document.getElementById('formSuccess-6').style.display="none";
+                    document.getElementById('formSuccess-8').style.display="none";
                 },2000);
             }
             else{
-                document.getElementById('formSuccess-6').style.display="block";
-                document.getElementById('formSuccess-6').style.color="red";
-                document.getElementById('formSuccess-6').innerText=result.message;
+                document.getElementById('formSuccess-8').style.display="block";
+                document.getElementById('formSuccess-8').style.color="red";
+                document.getElementById('formSuccess-8').innerText=result.message;
             }
 
             document.querySelector('button[type=submit]').disabled = false;
