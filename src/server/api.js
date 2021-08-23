@@ -22,7 +22,7 @@ const STATIC_DIR = "./dist";
 app.use(express.static(STATIC_DIR));
 
 const HOST = process.env.API_HOST || 'localhost';
-const PORT = process.env.API_PORT || 3002;
+const PORT = process.env.PORT || 3002;
 
 app.use((req,res,next)=>{
     res.setHeader(
