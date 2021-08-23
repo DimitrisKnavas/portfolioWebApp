@@ -18,6 +18,9 @@ app.use(compression());
 app.use(cors());
 app.use(bodyParser.json());
 
+const STATIC_DIR = "./dist";
+app.use(express.static(STATIC_DIR));
+
 const HOST = process.env.API_HOST || 'localhost';
 const PORT = process.env.API_PORT || 3002;
 
