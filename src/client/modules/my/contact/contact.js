@@ -59,7 +59,7 @@ export default class Contact extends LightningElement{
 
         document.querySelector('button[type=submit]').disabled = true;
 
-        fetch('http://localhost:3002/api/v1/sendemail',{
+        fetch('https://salty-meadow-09024.herokuapp.com/api/v1/sendemail',{
             method:'POST',
             headers:{
                 'accept':'application/json',
