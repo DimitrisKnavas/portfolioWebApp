@@ -29,7 +29,7 @@ app.use((req,res,next)=>{
         'Content-Security-Policy',
         "default-src 'self'",
         "img-src 'self'",
-        "script-src 'self' http://localhost:3002 https://www.google.com/recaptcha/api.js https://apis.google.com/js/api.js  'unsafe-eval'"
+        "script-src 'self' http://localhost:3002 https://www.google.com/recaptcha/api.js https://apis.google.com/js/api.js  'unsafe-inline'"
     )
     next()
 })
