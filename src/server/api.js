@@ -37,7 +37,7 @@ app.use((req,res,next)=>{
           directives: {
             ...helmet.contentSecurityPolicy.getDefaultDirectives(),
             "script-src": ["'self'", "'unsafe-inline'", "'unsafe-eval'", "https://www.google.com/recaptcha/", "https://www.gstatic.com/recaptcha/"],
-            "frame-src" : ["'self'", "https://www.google.com/recaptcha/", "https://recaptcha.google.com/recaptcha/"]
+            "frame-src" : ["'self'", "'unsafe-inline'", "'unsafe-eval'", "https://www.google.com/recaptcha/", "https://recaptcha.google.com/recaptcha/"]
           },
         },
       })
