@@ -25,13 +25,22 @@ const HOST = process.env.API_HOST || 'localhost';
 const PORT = process.env.PORT || 3002;
 
 app.use((req,res,next)=>{
-    res.setHeader(
+    /*res.setHeader(
         'Content-Security-Policy',
         "default-src 'self'",
         "img-src 'self'",
         "script-src 'self' https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/ 'unsafe-inline' 'unsafe-eval'",
         "frame-src 'self' https://www.google.com/recaptcha/ https://recaptcha.google.com/recaptcha/"
-    )
+    )*/
+    helmet({
+        contentSecurityPolicy: {
+          directives: {
+            ...helmet.contentSecurityPolicy.getDefaultDirectives(),
+            "script-src": ["'self'", "'unsafe-inline'", "'unsafe-eval'", "https://www.google.com/recaptcha/", "https://www.gstatic.com/recaptcha/"],
+            "frame-src" : ["'self'", "https://www.google.com/recaptcha/", "https://recaptcha.google.com/recaptcha/"]
+          },
+        },
+      })
     next()
 })
 let transporter = nodemailer.createTransport({
