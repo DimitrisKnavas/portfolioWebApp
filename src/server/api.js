@@ -25,7 +25,7 @@ const HOST = process.env.API_HOST || 'localhost';
 const PORT = process.env.PORT || 3002;
 
 app.use(
-    helmet({
+    /*helmet({
         contentSecurityPolicy: {
           directives: {
             ...helmet.contentSecurityPolicy.getDefaultDirectives(),
@@ -33,6 +33,9 @@ app.use(
             "frame-src" : ["'self'", "'unsafe-inline'", "'unsafe-eval'", "https://www.google.com/recaptcha/", "https://recaptcha.google.com/recaptcha/"]
           },
         },
+      })*/
+      helmet({
+        contentSecurityPolicy: false,
       })
 )
 
