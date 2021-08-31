@@ -24,14 +24,7 @@ app.use(express.static(STATIC_DIR));
 const HOST = process.env.API_HOST || 'localhost';
 const PORT = process.env.PORT || 3002;
 
-app.use((req,res,next)=>{
-    /*res.setHeader(
-        'Content-Security-Policy',
-        "default-src 'self'",
-        "img-src 'self'",
-        "script-src 'self' https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/ 'unsafe-inline' 'unsafe-eval'",
-        "frame-src 'self' https://www.google.com/recaptcha/ https://recaptcha.google.com/recaptcha/"
-    )*/
+app.use(
     helmet({
         contentSecurityPolicy: {
           directives: {
@@ -41,6 +34,17 @@ app.use((req,res,next)=>{
           },
         },
       })
+)
+
+app.use((req,res,next)=>{
+    /*res.setHeader(
+        'Content-Security-Policy',
+        "default-src 'self'",
+        "img-src 'self'",
+        "script-src 'self' https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/ 'unsafe-inline' 'unsafe-eval'",
+        "frame-src 'self' https://www.google.com/recaptcha/ https://recaptcha.google.com/recaptcha/"
+    )*/
+    
     next()
 })
 let transporter = nodemailer.createTransport({
