@@ -8,21 +8,6 @@ const app = express();
 app.use(helmet());
 app.use(compression());
 
-app.use(
-    /*helmet({
-        contentSecurityPolicy: {
-          directives: {
-            ...helmet.contentSecurityPolicy.getDefaultDirectives(),
-            "script-src": ["'self'", "'unsafe-inline'", "'unsafe-eval'", "https://www.google.com/recaptcha/", "https://www.gstatic.com/recaptcha/", "https://www.google.com/recaptcha/api.js"],
-            "frame-src" : ["'self'", "'unsafe-inline'", "'unsafe-eval'", "https://www.google.com/recaptcha/", "https://recaptcha.google.com/recaptcha/"]
-          },
-        },
-      })*/
-      helmet({
-        contentSecurityPolicy: false,
-      })
-)
-
 const HOST = process.env.HOST || 'localhost';
 const PORT = process.env.PORT || 3001;
 const DIST_DIR = './dist';
