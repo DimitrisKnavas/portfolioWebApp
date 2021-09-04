@@ -25,8 +25,9 @@ app.use(
           styleSrc: ["'self'", "'unsafe-inline'", 'fonts.googleapis.com'],
           frameSrc : ["'self'", "'unsafe-inline'", "'unsafe-eval'", 'https://www.google.com/recaptcha/', 'https://recaptcha.google.com/recaptcha/'],
           defaultSrc: ["'self'"],
-          imgSrc: ["'self'", 'http://www.w3.org/2000/svg'],
-          fontSrc:['fonts.gstatic.com']
+          imgSrc: ["'self'", 'http://www.w3.org/2000/svg', 'data: *'],
+          fontSrc:['fonts.gstatic.com'],
+          objectSrc:["'none'"]
       }
   })
 )
