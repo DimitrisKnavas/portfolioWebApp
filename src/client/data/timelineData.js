@@ -2,7 +2,7 @@ const TIMELINE_DATA = [
     {
         index : 1,
         title : 'Consultant - DACC',
-        date  : 'August 2021 - Present',
+        date  : 'September 2021 - Present',
         description : `Currently working as a developer on the Salesforce project of an international energy transformation corporation.
         My main responsibilities include:
         1) Creating technical solutions from the clients' requirements analysis and developing these solutions in our Salesforce org and testing them.
