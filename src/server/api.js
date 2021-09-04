@@ -22,10 +22,11 @@ app.use(
           defaultSrc: ["'self'"],
           scriptSrcElem: ["'self'", "'unsafe-inline'", "'unsafe-eval'", 'https://www.google.com/recaptcha/', 'https://www.gstatic.com/recaptcha/', 'https://www.google.com/recaptcha/api.js'],
           scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'", 'https://www.google.com/recaptcha/', 'https://www.gstatic.com/recaptcha/', 'https://www.google.com/recaptcha/api.js'],
-          styleSrc: ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com/css2?family=Orbitron:wght@695&display=swap'],
+          styleSrc: ["'self'", "'unsafe-inline'", 'fonts.googleapis.com'],
           frameSrc : ["'self'", "'unsafe-inline'", "'unsafe-eval'", 'https://www.google.com/recaptcha/', 'https://recaptcha.google.com/recaptcha/'],
           defaultSrc: ["'self'"],
           imgSrc: ["'self'"],
+          fontSrc:['fonts.gstatic.com']
       }
   })
 )
