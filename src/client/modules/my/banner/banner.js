@@ -7,18 +7,18 @@ export default class Banner extends LightningElement{
     connectedCallback(){
         window.onwheel = e => {
             let pos = document.documentElement.scrollTop || document.body.scrollTop;
-            console.log(document.documentElement.scrollTop);
-            console.log(document.documentElement.scrollTop);
-            console.log(pos);
-            console.log('DIM');
+            //console.log(document.documentElement.scrollTop);
+            //console.log(document.documentElement.scrollTop);
+            //console.log(pos);
+            //console.log('DIM');
             let bioS = document.getElementById('bioSection-0');
             let expS = document.querySelector('my-timeline');
             let homeS = document.getElementById('homeSection-0');
             let conS = document.querySelector('my-contact');
-            console.log(bioS.getBoundingClientRect().bottom);
-            console.log(expS.getBoundingClientRect().bottom);
-            console.log(homeS.getBoundingClientRect().bottom);
-            console.log(conS.getBoundingClientRect().bottom);
+            //console.log(bioS.getBoundingClientRect().bottom);
+            //console.log(expS.getBoundingClientRect().bottom);
+            //console.log(homeS.getBoundingClientRect().bottom);
+            //console.log(conS.getBoundingClientRect().bottom);
             
 
             let elem = document.querySelector('.wow-effect');
@@ -26,7 +26,7 @@ export default class Banner extends LightningElement{
               if(pos>60){
                 elem.classList.add('fly');
               }
-              console.log('Scroll Down');
+              //console.log('Scroll Down');
 
               if(conS.getBoundingClientRect().top<0){
                 let selectedOption = document.querySelector('ul ~ div');
@@ -111,7 +111,7 @@ export default class Banner extends LightningElement{
               }
             } else {
               // Scrolling Up with mouse
-              console.log('Scroll Up');
+              //console.log('Scroll Up');
               if(pos<60){
                 elem.classList.remove('fly');
               }

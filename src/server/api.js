@@ -16,25 +16,13 @@ if(process.env.NODE_ENV !== 'production'){
 const app = express();
 app.use(helmet());
 app.use(
-  /*helmet({
-      contentSecurityPolicy: {
-        directives: {
-          ...helmet.contentSecurityPolicy.getDefaultDirectives(),
-          "script-src": ["'self'", "'unsafe-inline'", "'unsafe-eval'", "https://www.google.com/recaptcha/", "https://www.gstatic.com/recaptcha/", "https://www.google.com/recaptcha/api.js"],
-          "frame-src" : ["'self'", "'unsafe-inline'", "'unsafe-eval'", "https://www.google.com/recaptcha/", "https://recaptcha.google.com/recaptcha/"]
-        },
-      },
-    })
-    helmet({
-      contentSecurityPolicy: false,
-    })*/
     helmet.contentSecurityPolicy({
       useDefaults: false,
       directives: {
           defaultSrc: ["'self'"],
           scriptSrcElem: ["'self'", "'unsafe-inline'", "'unsafe-eval'", 'https://www.google.com/recaptcha/', 'https://www.gstatic.com/recaptcha/', 'https://www.google.com/recaptcha/api.js'],
           scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'", 'https://www.google.com/recaptcha/', 'https://www.gstatic.com/recaptcha/', 'https://www.google.com/recaptcha/api.js'],
-          styleSrc: ["'self'", "'unsafe-inline'"],
+          styleSrc: ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com/css2?family=Orbitron:wght@695&display=swap'],
           frameSrc : ["'self'", "'unsafe-inline'", "'unsafe-eval'", 'https://www.google.com/recaptcha/', 'https://recaptcha.google.com/recaptcha/'],
           defaultSrc: ["'self'"],
           imgSrc: ["'self'"],
@@ -52,18 +40,6 @@ const HOST = process.env.API_HOST || 'localhost';
 const PORT = process.env.PORT || 3002;
 
 
-
-/*app.use((req,res,next)=>{
-    res.setHeader(
-        'Content-Security-Policy',
-        "default-src 'self'",
-        "img-src 'self'",
-        "script-src 'self' https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/ 'unsafe-inline' 'unsafe-eval'",
-        "frame-src 'self' https://www.google.com/recaptcha/ https://recaptcha.google.com/recaptcha/"
-    )
-    
-    next()
-})*/
 let transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
     port: 465,
@@ -77,8 +53,6 @@ let transporter = nodemailer.createTransport({
 app.get('/api/v1/endpoint', (req, res) => {
     res.json({ success: true ,
     csp:helmet.contentSecurityPolicy});
-    console.log(helmet.contentSecurityPolicy.directives);
-    console.log(res.header);
 });
 
 app.post('/api/v1/sendemail', async (req, res) => {
