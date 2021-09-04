@@ -15,7 +15,7 @@ export default class Navbar extends LightningElement{
                 let selectedOption = document.querySelector('ul ~ div');
                 //let firstOption = document.querySelector('ul > li > a');
                 let firstOption = document.querySelector('a[active]');
-                console.log(firstOption);
+                //console.log(firstOption);
 
                 let width = firstOption.getBoundingClientRect().width;
                 let left = firstOption.getBoundingClientRect().left;
@@ -32,7 +32,7 @@ export default class Navbar extends LightningElement{
         if(this.isMobileToggle === false){
             let selectedOption = document.querySelector('ul ~ div');
             let firstOption = document.querySelector('ul > li > a');
-            console.log(firstOption);
+            //console.log(firstOption);
 
             let width = firstOption.getBoundingClientRect().width;
             let left = firstOption.getBoundingClientRect().left - 50;
@@ -53,7 +53,7 @@ export default class Navbar extends LightningElement{
     }
 
     get navMobileHideUndeline(){
-        console.log(this.isMobileToggle);
+        //console.log(this.isMobileToggle);
         return `${!this.isMobileToggle ? 'navbar-slider' : 'navbar-slider-hide'}`
     }
 
@@ -96,31 +96,31 @@ export default class Navbar extends LightningElement{
         }
         this.isActive = event.target.innerText;
         let sectionNew = ''; 
-        console.log(this.isActive);
-        console.log(event.target.innerText);
+        //console.log(this.isActive);
+        //console.log(event.target.innerText);
         if(this.isActive === 'HOME'){
             let bannerEffect = document.querySelector('.wow-effect');
             bannerEffect.classList.remove('fly');
             sectionNew = document.getElementById('homeSection-0');
-            console.log(sectionNew);
+            //console.log(sectionNew);
         }
         else if(this.isActive === 'BIO'){
             let bannerEffect = document.querySelector('.wow-effect');
             bannerEffect.classList.add('fly');
             sectionNew = document.getElementById('bioSection-0');
-            console.log(sectionNew);
+            //console.log(sectionNew);
         }
         else if(this.isActive === 'EXPERIENCE'){
             let bannerEffect = document.querySelector('.wow-effect');
             bannerEffect.classList.add('fly');
             sectionNew = document.querySelector('my-timeline');
-            console.log(sectionNew);
+            //console.log(sectionNew);
         }
         else if(this.isActive === 'CONTACT'){
             let bannerEffect = document.querySelector('.wow-effect');
             bannerEffect.classList.add('fly');
             sectionNew = document.querySelector('my-contact');
-            console.log(sectionNew);
+            //console.log(sectionNew);
         }
         sectionNew.scrollIntoView();
         let activeLink = event.target;

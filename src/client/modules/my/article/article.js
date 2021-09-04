@@ -7,7 +7,7 @@ export default class Article extends LightningElement{
     @api bioBody;
 
     get alignClassTitle (){
-        console.log('bioIndex' + this.bioIndex);
+        //console.log('bioIndex' + this.bioIndex);
         return this.bioIndex % 2 === 0 ? 'wrap-left' : 'wrap-right';
     }
 
