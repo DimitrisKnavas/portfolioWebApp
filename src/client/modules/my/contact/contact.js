@@ -24,6 +24,8 @@ export default class Contact extends LightningElement{
     }
     
     handleMessage(event){
+        let spinner = document.getElementById('spinner-8');
+        spinner.style.display = "block";
         let errorSpan = document.getElementById('emailError-8');
         errorSpan.style.display="none";
         document.getElementById('formSuccess-8').display="none";
@@ -35,6 +37,7 @@ export default class Contact extends LightningElement{
             console.log('validationerror');
             errorSpan.style.display="block";
             errorSpan.style.color="red";
+            spinner.style.display = "none";
             return false;
         }
         else{
@@ -45,6 +48,7 @@ export default class Contact extends LightningElement{
                 console.log('email invalid');
                 errorSpan.style.display="block";
                 errorSpan.style.color="red";
+                spinner.style.display = "none";
                 return false;
               }
         }
@@ -73,6 +77,7 @@ export default class Contact extends LightningElement{
             return response.json();
         }).then(result=>{
             console.log('Message sent',result);
+            spinner.style.display = "none";
             if(result.success === true){
                 document.querySelector('input[name=email]').value='';
                 document.querySelector('textarea[name=message]').value='';
